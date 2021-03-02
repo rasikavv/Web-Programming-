@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+    function Formvalidate() {
+    var x = document.forms["form"]["name"].value;
+    if (x == "")
+     {
+        alert("Name must be filled out");
+        return false;
+     }
+     var y=document.forms["form"]["dob"].value;
+     if(y=="")
+     {
+         alert("Enter Date of birth");
+         return false;
+     }
+     var z=document.forms["form"]["email"].value;
+     if(z=="")
+     {
+         alert("Enter the email");
+         return false;
+     }
+     var n=document.forms["form"]["pswd"].value;
+     if(n=="")
+     {
+         alert("Enter the Password");
+         return false;
+     }
+     
+}
+</script>
+<body>
+    <center><h1>Registration Form</h1></center>
+    <form name="form" action="" onsubmit="return Formvalidate();">
+    Name:<input type="text" name="name"><br><br>
+    DOB:<input type="date" name="dob"><br><br>
+    Emailid:<input type="email" name="email"><br><br>
+    Password:<input type="password" name="pswd"><br><br>
+    <input type="submit" name="submit1" value="Submit">
+    </form>
+
+</body>
+</html>

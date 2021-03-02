@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script language="javascript">
+    function day_title(dayname)
+    {
+        document.write("<td align=center width=35 bgcolor=lightblue><b>"+dayname+"</b></td>");
+    }
+    function fill_table(month,month_len) 
+    {
+        day=1
+        document.write("<table border=1 cellspacing=3 cellpadding=3%>");
+        document.write("<td colspan=7 align=center bgcolor=blue><b>"+month+""+year+"</b><tr>");
+    day_title("Sun");
+    day_title("Mon");
+    day_title("Tue");
+    day_title("Wed");
+    day_title("Thur");
+    day_title("Fri");
+    day_title("Sat");
+    document.write("</tr><tr>");
+    for(var i=1;i<start_day;i++)
+    {
+        document.write("<td>");
+    }
+    for(var i=start_day;i<8;i++)
+    {
+        document.write("<td align=center bgcolor=silver>"+day+"</td>");
+        day++;
+    }
+    document.write("</tr><tr>");
+    while(day<=month_len)
+    {
+        for(var i=1;i<=7&&day<=month_len;i++)
+        {
+            document.write("<td align=center bgcolor=silver>"+day+"</td>");
+            day++;
+        }
+        document.write("</tr><tr>");
+        start_day=i;
+    }
+
+    document.write("</tr></table><br>");
+}
+    year=prompt("Enter 4digit year");
+    today=new Date("january1,"+year);
+    start_day=today.getDay()+1;
+    fill_table("jan",31);
+    if(year%4==0)
+    fill_table("feb",29);
+    else
+    fill_table("feb",28);
+    fill_table("mar",31);
+    fill_table("apr",30);
+    fill_table("may",31);
+    fill_table("june",30);
+    fill_table("july",31);
+    fill_table("aug",30);
+    fill_table("sep",31);
+    fill_table("oct",30);
+    fill_table("nov",31);
+    fill_table("dec",30);  
+
+    </script>
+</head>
+</html>

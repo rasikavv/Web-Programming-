@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<head> 
+<script language="javascript"> 
+function preload() 
+{ 
+topon=new Image(250,80); 
+topon.src="img3.png"; 
+topoff=new Image(250,230); 
+topoff.src="img2.png"; 
+} 
+
+function myMouseOn(n) 
+{ 
+preload(); 
+imageON=eval(n+"on.src"); 
+document.images[n].src=imageON; 
+} 
+
+function myMouseOff(n) 
+{ 
+imageOFF=eval(n+"off.src"); 
+document.images[n].src=imageOFF; 
+} 
+</script> 
+</head> 
+
+<body > 
+<h1><b>MOUSE_EVENT</b></h1> 
+<a href="#" onMouseOut="myMouseOff('top')"; onMouseOver="myMouseOn('top')";> 
+<img src="img1.png" alt="Show Next" name="top"> 
+</a> 
+</body> 
+</html>
